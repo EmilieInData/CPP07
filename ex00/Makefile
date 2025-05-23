@@ -1,14 +1,12 @@
-NAME = Cast
+NAME = Template
 
 CC = c++
 
 FLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98 -pedantic #-fsanitize=address -fsanitize=leak
 
-HEADER = ScalarConverter.hpp Common.hpp
+HEADER = Templates.hpp Common.hpp
 
-SRC = 	main.cpp \
-		ScalarConverter.cpp \
-		Common.cpp
+SRC = 	main.cpp 
 
 OBJDIR = Build
 
