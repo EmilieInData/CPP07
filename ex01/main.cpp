@@ -6,7 +6,7 @@
 /*   By: esellier <esellier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 17:58:30 by esellier          #+#    #+#             */
-/*   Updated: 2025/05/23 18:34:34 by esellier         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:04:50 by esellier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void    changeO(std::string& value)
 
 void    modulo(int& a)
 {
-    //mettre un message d'erreur si pas de a
     a = a % 6;
     return;
 }
@@ -45,15 +44,19 @@ int main()
         std::cout << BLUE << array[i] << std::endl;
     std::cout << std::endl;
 
-    int             arrai[] = {0, 21, 12, 87, -42};
-    unsigned long   lengthi = sizeof(arrai) / sizeof(arrai[0]);
+    int*             arrai = NULL;
+    unsigned long   lengthi = 0;
+    
+    int             tmp[] = {0, 21, 12, 87, -42};
+    arrai = tmp;
+    lengthi = sizeof(tmp) / sizeof(tmp[0]);
 
-    for (unsigned long i = 0; i < lengthi; i++)
+    if (arrai && lengthi > 0) for (unsigned long i = 0; i < lengthi; i++)
         std::cout << PURPLE << arrai[i] << std::endl; 
     
     ::iter(arrai, lengthi, modulo);
     
-    for (unsigned long i = 0; i < lengthi; i++)
+    if (arrai && lengthi > 0) for (unsigned long i = 0; i < lengthi; i++)
         std::cout << BLUE << arrai[i] << std::endl;
     std::cout << std::endl;
     
